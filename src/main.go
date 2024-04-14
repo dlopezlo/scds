@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	fmt.Printf("This is a test")
+  fmt.Printf("Starting web server...")
 	r := chi.NewRouter()
 	r.Use(middleware.Timeout(time.Second * 3))
 
