@@ -14,6 +14,6 @@ LABEL Name=scds
 RUN apk update && apk --no-cache add ca-certificates
 
 WORKDIR /app
-COPY --from=builder /app/scds .
+COPY --from=builder ["/app/scds", "/app/*json", "/app/template.tpl", "./"]
 
 ENTRYPOINT ["./scds"]
