@@ -1,10 +1,10 @@
-FROM golang:1.22.1-alpine3.18 AS builder
+FROM golang:1.22.3-alpine3.18 AS builder
 RUN apk add --no-cache git upx
 
 WORKDIR /app
 
-COPY ["src/*", "src/go.mod", "src/go.sum", "./"]
-RUN cd go mod download -x && \
+COPY ["src/", "./"]
+RUN ls -l utils/ && go mod download -x && \
     go build -ldflags="-s -w" -o scds -v . && \
     upx scds
 
