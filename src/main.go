@@ -23,6 +23,7 @@ type Element struct {
 }
 
 func main() {
+	log.SetOutput(os.Stdout)
 	s := CreateNewServer()
 	s.MountHandlers()
 
