@@ -2,7 +2,7 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"text/template"
@@ -28,9 +28,9 @@ func main() {
 
 	err := http.ListenAndServe(":3000", s.Router)
 	if err != nil {
-		fmt.Printf("Error starting server: %s\n", err)
+		log.Printf("Error starting server: %s\n", err)
 	}
-	fmt.Println("Server ready on port 3000")
+	log.Println("Server ready on port 3000")
 }
 
 type Server struct {
@@ -55,7 +55,7 @@ func (s *Server) MountHandlers() {
 func WelcomeHandler(w http.ResponseWriter, r *http.Request) {
 	_, err := w.Write([]byte("Welcome to my TFG"))
 	if err != nil {
-		fmt.Println("Error writing response:", err)
+		log.Println("Error writing response:", err)
 	}
 }
 
@@ -77,7 +77,7 @@ func getSSHConfigHandler(w http.ResponseWriter, r *http.Request) {
 	sshData, err := os.ReadFile("ssh-data.json")
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		fmt.Println("Error reading data file:", err)
+		log.Println("Error reading data file:", err)
 		return
 	}
 
@@ -85,7 +85,7 @@ func getSSHConfigHandler(w http.ResponseWriter, r *http.Request) {
 	err = json.Unmarshal(sshData, &data)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		fmt.Println("Error parsing json:", err)
+		log.Println("Error parsing json:", err)
 		return
 	}
 
@@ -93,7 +93,7 @@ func getSSHConfigHandler(w http.ResponseWriter, r *http.Request) {
 	tpl, err := template.New("template.tpl").ParseFiles("template.tpl")
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		fmt.Println("Error with templating system:", err)
+		log.Println("Error with templating system:", err)
 	}
 
 	// Execute renders the template with the data and writes to
@@ -101,6 +101,6 @@ func getSSHConfigHandler(w http.ResponseWriter, r *http.Request) {
 	err = tpl.Execute(w, data)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		fmt.Println("Error with templating system:", err)
+		log.Println("Error with templating system:", err)
 	}
 }

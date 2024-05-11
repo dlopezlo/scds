@@ -2,6 +2,7 @@ package utils
 
 import (
 	"fmt"
+	"log"
 	"regexp"
 )
 
@@ -10,12 +11,12 @@ func GetUsername(username string) (string, error) {
 	usernameRegex := "^[a-zA-Z][a-z,A-Z,-,_,0-9,.]{3,29}"
 	regex, err := regexp.Compile(usernameRegex)
 	if err != nil {
-		fmt.Println("Error compiling regular expression", err)
+		log.Println("Error compiling regular expression", err)
 		return "", err
 	}
 
 	if !regex.MatchString(username) {
-		fmt.Println("Invalid username", err)
+		log.Println("Invalid username", err)
 		return "", fmt.Errorf("Invalid username: %s", username)
 	}
 
