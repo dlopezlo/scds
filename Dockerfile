@@ -3,7 +3,7 @@ RUN apk add --no-cache git upx
 
 WORKDIR /app
 
-COPY ["src/*", "go.mod", "go.sum", "./"]
+COPY ["src/*", "src/go.mod", "src/go.sum", "./"]
 RUN go mod download -x && \
     go build -ldflags="-s -w" -o scds -v . && \
     upx scds

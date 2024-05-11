@@ -1,0 +1,95 @@
+{
+    "hosts": [
+        {
+            "host":  [ "east-bastion", "bastion1" ],
+            "hostname": "east-bastion.tydnet.org",
+            "port": 30022
+        },
+        {
+            "host":  [ "west-bastion", "bastion2" ],
+            "hostname": "west-bastion.tydnet.org",
+            "port": 30022
+        },
+        {
+        "host":  [ "leia", "leia.tydnet.org" ],
+        "hostname": "10.77.1.10",
+        "proxyjump": "east-bastion", 
+        "proxyCommand": "bash -c \"fwknop -w /usr/local/bin/wget -R -n steam; sleep 3; nc %h %p\""
+        }, 
+        {
+            "host":  [ "mickey"],
+            "hostname": "10.77.1.11",
+            "proxyjump": "east-bastion"
+        },
+        {
+            "host":  [ "marcille"],
+            "hostname": "10.77.1.12",
+            "proxyjump": "east-bastion"
+        },
+        {
+            "host":  [ "gopher"],
+            "hostname": "10.77.1.13",
+            "proxyjump": "east-bastion"
+        },
+        {
+            "host":  [ "ele"],
+            "hostname": "10.77.1.14",
+            "proxyjump": "east-bastion"
+        },
+        {
+            "host":  [ "batman"],
+            "hostname": "10.77.1.15",
+            "proxyjump": "east-bastion"
+        },
+        {
+            "host":  [ "xisco"],
+            "hostname": "10.77.1.16",
+            "proxyjump": "east-bastion"
+        },
+        {
+            "host":  [ "bubu"],
+            "hostname": "10.77.1.17",
+            "proxyjump": "east-bastion"
+        },
+        {
+            "host":  [ "toby"],
+            "hostname": "10.77.1.18",
+            "proxyjump": "east-bastion"
+        },
+        {
+            "host":  [ "chihiro"],
+            "hostname": "10.77.1.19",
+            "proxyjump": "east-bastion"
+        },
+        {
+            "host":  [ "sauka"],
+            "hostname": "10.77.2.20",
+            "proxyjump": "west-bastion"
+        },
+        {
+            "host":  [ "wanda"],
+            "hostname": "10.77.2.21",
+            "proxyjump": "west-bastion"
+        },
+        {
+            "host":  [ "zombicide"],
+            "hostname": "10.77.2.22",
+            "proxyjump": "west-bastion"
+        },
+        {
+            "host":  [ "arkham"],
+            "hostname": "10.77.2.23",
+            "proxyjump": "west-bastion"
+        },
+        {
+            "host":  [ "madness"],
+            "hostname": "10.77.2.24",
+            "proxyjump": "west-bastion"
+        },
+        {
+            "host":  [ "munchkin"],
+            "hostname": "10.77.2.24",
+            "proxyjump": "west-bastion"
+        }
+    ]
+}    
