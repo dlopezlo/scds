@@ -5,6 +5,7 @@ WORKDIR /app
 
 COPY ["src/", "./"]
 RUN ls -l utils/ && go mod download -x && \
+    go test ./... && \ 
     go build -ldflags="-s -w" -o scds -v . && \
     upx scds
 
