@@ -8,7 +8,7 @@ import (
 
 func GetUsername(username string) (string, error) {
 	// expressió regular de noms d'usuari
-	usernameRegex := "^[a-zA-Z][a-z,A-Z,-,_,0-9,.]{3,29}"
+	usernameRegex := "^[a-zA-Z][a-z,A-Z,\\-,_,0-9,.]{3,29}$"
 	regex, err := regexp.Compile(usernameRegex)
 	if err != nil {
 		log.Println("Error compiling regular expression", err)

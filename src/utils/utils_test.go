@@ -16,13 +16,13 @@ func TestGetUsernameValid(t *testing.T) {
 	}
 
 	for _, tc := range testCases {
-		t.Run("Invalid username "+tc.username, func(t *testing.T) {
+		t.Run("Valid username "+tc.username, func(t *testing.T) {
 			result, err := GetUsername(tc.username)
-			if err == nil {
-				t.Error("Invalid username should return an error")
+			if result != tc.username {
+				t.Errorf("Expected username %s. Got %s\n", tc.username, result)
 			}
-			if result != "" {
-				t.Error("Invalid username should return an empty string")
+			if err != nil {
+				t.Error("Valid usernames should not produce errors")
 			}
 		})
 	}
