@@ -1,0 +1,16 @@
+domain: scds-dev.tydnet.org
+namespace: tfg-dev
+appName: scds
+environment: dev
+secret:
+  name: docker-cred
+
+service:
+  port: 3000
+  type: ClusterIP
+
+image:
+  name: dlopezlo/scds
+  tag: latest
+
+replicas: 1

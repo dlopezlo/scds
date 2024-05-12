@@ -1,0 +1,16 @@
+domain: scds.tydnet.org
+namespace: tfg-prod
+appName: scds
+environment: prod 
+secret:
+  name: docker-cred
+
+service:
+  port: 3000
+  type: LoadBalancer
+
+image:
+  name: dlopezlo/scds
+  tag: latest
+
+replicas: 2
