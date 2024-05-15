@@ -7,7 +7,7 @@ import (
 	"github.com/dlopezlo/scds/server"
 )
 
-const APP_PORT = ":3001"
+const APP_PORT = ":3000"
 
 func main() {
 
