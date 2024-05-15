@@ -2,6 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
   name: "letsencrypt-{{ .Values.environment }}"
+  namespace: tfg-dev
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
