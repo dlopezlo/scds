@@ -27,13 +27,13 @@
             "proxyjump": "east-bastion"
         },
         {
-            "host":  [ "gopher"],
-            "hostname": "10.77.1.13",
+            "host":  [ "ele"],
+            "hostname": "10.77.1.14",
             "proxyjump": "east-bastion"
         },
         {
-            "host":  [ "ele"],
-            "hostname": "10.77.1.14",
+            "host":  [ "bart"],
+            "hostname": "10.77.5.14",
             "proxyjump": "east-bastion"
         },
         {
