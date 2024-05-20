@@ -22,15 +22,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: current_version
+        run: echo "current_version=$(grep 'version:' devops/k8s/helm/scds/Chart.yaml | cut -d ' ' -f2)" >> $GITHUB_ENV
+      - name: FragileTech/bump-version
+        uses: FragileTech/bump-version@main
         with:
-          ref: ${{ github.ref }}
-          token: ${{ secrets.GHA_TOKEN_COMMIT }}
-
-      - name: Increment Helm chart version.
-        uses: yoichiro/gh-action-increment-value@main
-        with:
-          target_directory: '/devops/k8s/helm/scds/'
-          target_file: 'Chart.yaml'
-          prefix: 'version:'
-          suffix: ''
-          commit_message: 'Increment the helm version to '
+          current_version: "${{ env.current_version }}"
+          files: /devops/k8s/helm/scds/Chart.yaml
+          commit_name: Bump Helm Chart Version
+          commit_email: dlopezlo@gmail.com
+          login: dlopezlo
+          token: "${{ secrets.GHA_TOKEN_COMMIT }}"
