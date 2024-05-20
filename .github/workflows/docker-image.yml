@@ -101,7 +101,7 @@ jobs:
       - name: Increment value
         uses: yoichiro/gh-action-increment-value@main
         with:
-          target_directory: 'devops/k8s/helm/scds/Chart.yaml'
+          target_directory: '../../devops/k8s/helm/scds/Chart.yaml'
           target_file: 'Chart.yaml'
           prefix: 'buildNumber:'
           suffix: ''
