@@ -28,6 +28,6 @@ jobs:
         with:
           target_directory: '/devops/k8s/helm/scds/'
           target_file: 'Chart.yaml'
-          prefix: 'buildNumber:'
+          prefix: 'version:'
           suffix: ''
           commit_message: 'Increment the helm version to '
