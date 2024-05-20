@@ -37,6 +37,11 @@
             "proxyjump": "east-bastion"
         },
         {
+            "host":  [ "lisa"],
+            "hostname": "10.77.5.15",
+            "proxyjump": "east-bastion"
+        },
+        {
             "host":  [ "batman"],
             "hostname": "10.77.1.15",
             "proxyjump": "east-bastion"
