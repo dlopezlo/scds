@@ -2,6 +2,11 @@ name: Inc Helm Version
 
 on:
   workflow_dispatch: 
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'devops/k8s/helm/scds/Chart.yaml'
 
 jobs:
   build:
@@ -21,7 +26,7 @@ jobs:
       - name: Increment Helm chart version.
         uses: yoichiro/gh-action-increment-value@main
         with:
-          target_directory: '../../devops/k8s/helm/scds/Chart.yaml'
+          target_directory: '/devops/k8s/helm/scds/'
           target_file: 'Chart.yaml'
           prefix: 'buildNumber:'
           suffix: ''
