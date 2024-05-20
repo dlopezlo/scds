@@ -8,7 +8,7 @@ func TestGetUsernameValid(t *testing.T) {
 	}{
 		{"dlopez"},
 		{"msolsona"},
-		{"jroque"}, // too short
+		{"jroque"},
 		{"cris.b"},
 		{"xavi.gonzalez"},
 		{"user77"},
