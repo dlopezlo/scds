@@ -27,5 +27,5 @@ func TestWelcomePage(t *testing.T) {
 	req, _ := http.NewRequest("GET", "/", nil)
 	response := executeRequest(req, s)
 	checkResponseCode(t, http.StatusOK, response.Code)
-	require.Equal(t, "Welcome to my TFG", response.Body.String())
+	require.Equal(t, "Welcome to my TFG on Computer Science", response.Body.String())
 }

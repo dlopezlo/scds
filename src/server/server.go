@@ -42,7 +42,7 @@ func (s *Server) MountHandlers() {
 }
 
 func WelcomeHandler(w http.ResponseWriter, r *http.Request) {
-	_, err := w.Write([]byte("Welcome to my TFG"))
+	_, err := w.Write([]byte("Welcome to my TFG on Computer Science"))
 	if err != nil {
 		log.Println("Error writing response:", err)
 	}
