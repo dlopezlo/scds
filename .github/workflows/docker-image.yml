@@ -98,3 +98,11 @@ jobs:
         # against the sigstore community Fulcio instance.
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
 
+      - name: Increment value
+        uses: yoichiro/gh-action-increment-value@main
+        with:
+          target_directory: 'devops/k8s/helm/scds/Chart.yaml'
+          target_file: 'Chart.yaml'
+          prefix: 'buildNumber:'
+          suffix: ''
+          commit_message: 'Increment the helm version to '
