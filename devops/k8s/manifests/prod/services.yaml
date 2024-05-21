@@ -1,0 +1,47 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: scds-service
+  namespace: tfg-prod
+  labels:
+    app: scds
+spec:
+  type: ClusterIP
+  selector:
+    app: scds
+  ports:
+  - port: 3000
+    targetPort: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: scds-ingress
+  namespace: tfg-prod
+  labels:
+    app: scds
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    acme.cert-manager.io/http01-edit-in-place: "true"
+    service.beta.kubernetes.io/do-loadbalancer-hostname: "scds.tydnet.org" 
+      # nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    acme.cert-manager.io/http01-ingress-class: "nginx"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: scds.tydnet.org
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: scds-service
+            port:
+              number: 3000
+  tls:
+    - hosts:
+      - scds.tydnet.org
+      secretName: letsencrypt-prod-secretname
+---

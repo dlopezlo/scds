@@ -1,0 +1,34 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: tfg-dev
+  name: tfg-dev
+spec:
+  finalizers:
+  - kubernetes
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scds-deployment
+  labels:
+    app: scds
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: scds
+  template:
+    metadata:
+      labels:
+        app: scds
+    spec:
+      containers:
+      - name: ssh-config-server
+        image: dlopezlo/scds:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+---

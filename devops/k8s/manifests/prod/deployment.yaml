@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scds
+  labels:
+    app: scds
+  namespace: tfg-prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: scds
+  template:
+    metadata:
+      labels:
+        app: scds
+    spec:
+      containers:
+      - name: ssh-config-server
+        image: dlopezlo/scds:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+      - name: docker-cred
