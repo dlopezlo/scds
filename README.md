@@ -1,3 +1,3 @@
-# Treball Final de Grau en Engineria Informàtica 
+# Treball Final de Grau en Enginyeria Informàtica 
 
 
