@@ -22,6 +22,11 @@
             "proxyjump": "east-bastion"
         },
         {
+            "host":  [ "blue"],
+            "hostname": "10.77.8.11",
+            "proxyjump": "east-bastion"
+        },
+        {
             "host":  [ "marcille"],
             "hostname": "10.77.1.12",
             "proxyjump": "east-bastion"
