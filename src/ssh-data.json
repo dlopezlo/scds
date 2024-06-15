@@ -109,16 +109,6 @@
             "host":  [ "purple"],
             "hostname": "10.78.2.22",
             "proxyjump": "west-bastion"
-        },
-        {
-            "host":  [ "yellow"],
-            "hostname": "10.78.2.23",
-            "proxyjump": "west-bastion"
-        },
-        {
-            "host":  [ "tfguoc"],
-            "hostname": "10.78.3.22",
-            "proxyjump": "west-bastion"
         }
     ]
 }    
