@@ -104,6 +104,11 @@
             "host":  [ "popi"],
             "hostname": "10.78.2.21",
             "proxyjump": "west-bastion"
+        },
+        {
+            "host":  [ "purple"],
+            "hostname": "10.78.2.22",
+            "proxyjump": "west-bastion"
         }
     ]
 }    
