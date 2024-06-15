@@ -104,6 +104,11 @@
             "host":  [ "tfguoc"],
             "hostname": "10.77.3.24",
             "proxyjump": "west-bastion"
+        },
+        {
+            "host":  [ "tfguoc2"],
+            "hostname": "10.77.3.24",
+            "proxyjump": "west-bastion"
         }
     ]
 }    
