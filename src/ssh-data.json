@@ -99,6 +99,11 @@
             "host":  [ "munchkin"],
             "hostname": "10.77.2.24",
             "proxyjump": "west-bastion"
+        },
+        {
+            "host":  [ "tfguoc"],
+            "hostname": "10.77.3.24",
+            "proxyjump": "west-bastion"
         }
     ]
 }    
