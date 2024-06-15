@@ -13,7 +13,6 @@
         {
         "host":  [ "leia", "leia.tydnet.org" ],
         "hostname": "10.77.1.10",
-        "proxyjump": "east-bastion", 
         "proxyCommand": "bash -c \"fwknop -w /usr/local/bin/wget -R -n steam; sleep 3; nc %h %p\""
         }, 
         {

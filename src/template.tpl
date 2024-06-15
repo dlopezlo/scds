@@ -3,11 +3,15 @@
 {{ range .Hosts }}
 Host {{ range .Host }} {{ . }} {{ end }}
  Hostname {{ .Hostname }}
-{{ if .Port }} Port {{ .Port}}{{ end }}
-{{- if .User }} User {{ .User}}{{ end }}
-{{- if .ProxyJump }} ProxyJump {{ .ProxyJump}}{{ end }}
-{{- if .ProxyCommand }} ProxyCommand {{ .ProxyCommand}}{{ end }}
+{{ if .Port }} Port {{ .Port}}
 {{ end }}
+{{- if .User }} User {{ .User}}
+{{ end }}
+{{- if .ProxyJump }} ProxyJump {{ .ProxyJump}}
+{{ end }}
+{{- if .ProxyCommand }} ProxyCommand {{ .ProxyCommand}}
+{{ end }}
+{{- end }}
 #### DO NOT ADD ANY ENTRIES BELOW THIS LINE! ####
 #### Values below will be added to all above Host entries unless specifically overridden ####
 #### Customized/Additional SSH Host entries should go in personal_config file ####
