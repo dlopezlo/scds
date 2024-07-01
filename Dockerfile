@@ -9,7 +9,7 @@ RUN ls -l utils/ && go mod download -x && \
     go build -ldflags="-s -w" -o scds -v . && \
     upx scds
 
-FROM alpine:3.19
+FROM alpine:3
 LABEL Name=scds
 
 RUN apk update && apk --no-cache add ca-certificates
